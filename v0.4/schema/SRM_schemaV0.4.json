@@ -1,6 +1,7 @@
 {"$schema": "http://json-schema.org/draft-07/schema#",
 	"definitions": {
 		"userPara": {
+			"title": "userPara",
 			"type": "array",
 			"items": {
 				"type": "object",
@@ -46,6 +47,58 @@
 				]
 			},
 			"uniqueItems": true
+		},
+		"calibrations": {
+			"title":"calibrations",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+						"id": {
+							"title": "ID",
+							"description": "ID of the calibration",
+							"type": "string"
+						},
+						"date": {
+							"title": "date",
+							"description": "date of the calibration",
+							"type": "string"
+						},
+						"certificateNr": {
+							"title": "certificateNr",
+							"description": "calibration certificate number",
+							"type": "string"
+						},
+						"file": {
+							"title": "file",
+							"description": "calibration file",
+							"type": "string"
+						},
+						"institution": {
+							"title": "institution",
+							"description": "name of the calibration lab/institution",
+							"type": "string"
+						},
+						"description": {
+							"title": "description",
+							"description": "description of the calibration",
+							"type": "string"
+						},
+						"quantity": {
+							"title": "quantity",
+							"description": "quantity of the calibration",
+							"type": "string"
+						},
+						"userPara": {
+							"$ref": "#/definitions/userPara"
+						},
+				},
+				"required": [
+					"date",
+					"quantity",
+				]
+			},
+			"uniqueItems": true
 		}
 	},
 	"type": "object",
@@ -59,8 +112,8 @@
 		"schemaVersion": {
 			"title": "schemaVersion",
 			"description": "This is the version of the fileformat",
-			"type": "string",
-			"const": "0.4"
+			"type": "number",
+			"const": 0.4
 		},
 		"schemaURL": {
 			"title": "schemaURL",
@@ -183,7 +236,7 @@
 				},
 				"category": {
 					"title": "category",
-					"description": "This is the device category (typically SRM)",
+					"description": "This is the device category (SRM)",
 					"type": "string"
 				},
 				"description": {
@@ -211,154 +264,119 @@
 					"description": "owner of the SRM device",
 					"type": "string"
 				},
-				"softwareName": {
-					"title": "softwareName",
-					"description": "Software of the spectroradiometer",
-					"type": "string"
-				},
-				"softwareVersion": {
-					"title": "softwareVersion",
-					"description": "Software version of the spectroradiometer",
-					"type": "string"
-				},
-				"firmwareVersion": {
-					"title": "firmwareVersion",
-					"description": "firmware of the spectroradiometer",
-					"type": "string"
-				},
 				"comments": {
 					"title": "comments",
 					"description": "comments related to the device",
 					"type": "string"
 				},
-				"referencePlaneSRM": {
-					"title": "referencePlaneSRM",
-					"description": "decription of the position of the reference plane",
-					"type": "string"
-				},
-				"SRMType": {
-					"title": "SRMType",
-					"description": "The this is the kind of SRM in respect to the configuration",
-					"type": "string",
-					"enum": [
-						"single-array",
-						"single-scaninng",
-						"double-neg",
-						"double-pos",
-						"other"
-					]
-				},
-				"xScaleQuantity": {
-					"title": "xScaleQuantity",
-					"description": "defines the quantity of the xScale",
-					"type": "string",
-					"enum": [
-						"wavelength",
-						"frequency",
-						"energy",
-						"pixel",
-						"other"
-					]
-				},
-				"xScaleUnit": {
-					"title": "xScaleUnit",
-					"description": "Unit associated with the Xscale quantity (nm, Hz, s-1,) ",
-					"type": "string"
-				},
-				"xScaleRangeMin": {
-					"title": "xScaleRangeMin",
-					"description": "Minimum wavelength range of the SRM",
-					"type": "number"
-				},
-				"xScaleRangeMax": {
-					"title": "xScaleRangeMax",
-					"description": "Maximum wavelength range of the SRM",
-					"type": "number"
-				},
-				"xScaleInterval": {
-					"title": "xScaleInterval",
-					"description": "wavelengthInterval. put value is 0 or negative if the interval is varying",
-					"type": "number"
-				},
-				"spectralQuantity": {
-					"title": "spectralQuantity",
-					"description": "defines the spectral quantity",
-					"type": "string",
-					"enum": [
-						"relative",
-						"irradiance",
-						"flux",
-						"radiance",
-						"intensity",
-						"energy",
-						"exposure",
-						"counts",
-						"other"
-					]
-				},
-				"spectralUnit": {
-					"title": "spectralUnit",
-					"description": "spectral Unit associated with the quantity (W nm-1, mW m-2 nm-1, eV,...)",
-					"type": "string"
-				},
-				"scans": {
-					"title": "scans",
-					"description": "defines the number of scans that where used to calculated the average value",
-					"type": "number"
-				},
-				"configurationFile": {
-					"title": "configurationFile",
-					"description": "name (and event. path) of the configuration File",
-					"type": "string"
-				},
-				"opticalBandwidth": {
-					"title": "opticalBandwidth",
-					"description": "average optical bandwidth expressed in the XScaleUnit",
-					"type": "number"
-				},
-				"inputOptics": {
-					"title": "inputOptics",
-					"description": "input optics used for the devices",
-					"type": "string"
-				},
-				"calibrations": {
-					"title": "calibrations",
-					"description": "Information about the calibration of the device",
+				"parameters":{
+					"title": "parameters",
+					"descripton": "various parameters of the device",
 					"type": "object",
-					"properties": {
-						"id": {
-							"title": "ID",
-							"description": "ID of the calibration",
+					"property": {
+						"softwareName": {
+							"title": "softwareName",
+							"description": "Software of the spectroradiometer",
 							"type": "string"
 						},
-						"date": {
-							"title": "date",
-							"description": "date of the calibration",
+						"softwareVersion": {
+							"title": "softwareVersion",
+							"description": "Software version of the spectroradiometer",
 							"type": "string"
 						},
-						"certificateNr": {
-							"title": "certificateNr",
-							"description": "calibration certificate number",
+						"firmwareVersion": {
+							"title": "firmwareVersion",
+							"description": "firmware of the spectroradiometer",
 							"type": "string"
 						},
-						"file": {
-							"title": "file",
-							"description": "calibration file",
+						"referencePlaneSRM": {
+							"title": "referencePlaneSRM",
+							"description": "decription of the position of the reference plane",
 							"type": "string"
 						},
-						"institution": {
-							"title": "institution",
-							"description": "name of the calibration lab/institution",
+						"SRMType": {
+							"title": "SRMType",
+							"description": "The this is the kind of SRM in respect to the configuration",
+							"type": "string",
+							"enum": [
+								"single-array",
+								"single-scaninng",
+								"double-neg",
+								"double-pos",
+								"other"
+							]
+						},
+						"xScaleQuantity": {
+							"title": "xScaleQuantity",
+							"description": "defines the quantity of the xScale",
+							"type": "string",
+							"enum": [
+								"wavelength",
+								"frequency",
+								"energy",
+								"pixel",
+								"other"
+							]
+						},
+						"xScaleUnit": {
+							"title": "xScaleUnit",
+							"description": "Unit associated with the Xscale quantity (nm, Hz, s-1,) ",
 							"type": "string"
 						},
-						"description": {
-							"title": "description",
-							"description": "description of the calibration",
+						"xScaleRangeMin": {
+							"title": "xScaleRangeMin",
+							"description": "Minimum wavelength range of the SRM",
+							"type": "number"
+						},
+						"xScaleRangeMax": {
+							"title": "xScaleRangeMax",
+							"description": "Maximum wavelength range of the SRM",
+							"type": "number"
+						},
+						"xScaleInterval": {
+							"title": "xScaleInterval",
+							"description": "wavelengthInterval. put value is 0 or negative if the interval is varying",
+							"type": "number"
+						},
+						"spectralQuantity": {
+							"title": "spectralQuantity",
+							"description": "defines the spectral quantity",
+							"type": "string",
+							"enum": [
+								"relative",
+								"irradiance",
+								"flux",
+								"radiance",
+								"intensity",
+								"energy",
+								"exposure",
+								"counts",
+								"other"
+							]
+						},
+						"spectralUnit": {
+							"title": "spectralUnit",
+							"description": "spectral Unit associated with the quantity (W nm-1, mW m-2 nm-1, eV,...)",
 							"type": "string"
 						},
-						"quantity": {
-							"title": "quantity",
-							"description": "quantity of the calibration",
+						"scans": {
+							"title": "scans",
+							"description": "defines the number of scans that where used to calculated the average value",
+							"type": "number"
+						},
+						"configurationFile": {
+							"title": "configurationFile",
+							"description": "name (and event. path) of the configuration File",
+							"type": "string"
+						},
+						"opticalBandwidth": {
+							"title": "opticalBandwidth",
+							"description": "average optical bandwidth expressed in the XScaleUnit",
+							"type": "number"
+						},
+						"inputOptics": {
+							"title": "inputOptics",
+							"description": "input optics used for the devices",
 							"type": "string"
 						},
 						"userPara": {
@@ -366,8 +384,8 @@
 						}
 					}
 				},
-				"userPara": {
-					"$ref": "#/definitions/userPara"
+				"calibrations":  {
+					"$ref": "#/definitions/calibrations"
 				}
 			}
 		},
@@ -451,23 +469,23 @@
 			"description": "Information about the measurement conditions",
 			"type": "object",
 			"properties": {
-				"name": {
-					"title": "name",
-					"description": "name measurement setup",
-					"type": "string"
-				},
 				"id": {
 					"title": "id",
 					"description": "ID of measurement setup",
 					"type": "string"
 				},				
+				"name": {
+					"title": "name",
+					"description": "name measurement setup",
+					"type": "string"
+				},
 				"version": {
 					"title": "version",
 					"description": "version of measurement setup",
 					"type": "string"
 				},				
-				"institution": {
-					"title": "institution",
+				"instituion": {
+					"title": "instituion",
 					"description": "institution of measurement setup",
 					"type": "string"
 				},				
@@ -568,18 +586,74 @@
 					"description": "owner of the device under test",
 					"type": "string"
 				},
-				"referencePlaneDUT": {
-					"title": "referencePlaneDUT",
-					"description": "decription of the position of the reference plane/point of the device under test",
-					"type": "string"
-				},
 				"comment": {
 					"title": "comment",
 					"description": "any comments on the device under test",
 					"type": "string"
 				},
-				"userPara": {
-					"$ref": "#/definitions/userPara"
+				"parameters":{
+					"title":"parameters",
+					"description":"parameters of the DUT",
+					"type": "object",
+					"properties":{
+						"referencePlaneDUT": {
+							"title": "referencePlaneDUT",
+							"description": "decription of the position of the reference plane/point of the device under test",
+							"type": "string"
+						},
+						"current": {
+							"title": "current",
+							"description": "electrical current expressed in A of the device under test",
+							"type": "number"
+						},
+						"current": {
+							"title": "voltage",
+							"description": "electrical voltage expressed in V of the device under test",
+							"type": "number"
+						},
+						"power": {
+							"title": "power",
+							"description": "electrical power expressed in W of the device under test",
+							"type": "number"
+						},						
+						"frequency": {
+							"title": "frequency",
+							"description": "frequency expressed in Hz of the power supply of the device under test",
+							"type": "number"
+						},
+						"cosPhi": {
+							"title": "cosPhi",
+							"description": "fcosPhi of the power supply of the device under test",
+							"type": "number"
+						},
+						"powerMode": {
+							"title": "powerMode",
+							"description": "current mode of the power supply of the device under test",
+							"type": "string",
+							"enum": [
+								"AC",
+								"DC",
+								"n/a",
+							]
+						},
+						"powerMode": {
+							"title": "nominalMode",
+							"description": "nominal mode of the power supply of the device under test",
+							"type": "string",
+							"enum": [
+								"current",
+								"voltage",
+								"power",
+								"n/a",
+							]
+						},
+						"userPara": {
+							"$ref": "#/definitions/userPara"
+						}
+					}
+				},
+				"calibrations": {
+					"$ref": "#/definitions/calibrations"
 				}
 			}
 		},
