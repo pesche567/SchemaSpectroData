@@ -181,6 +181,11 @@
 					"description": "This is the device type as defined by the manufactuer",
 					"type": "string"
 				},
+				"category": {
+					"title": "category",
+					"description": "This is the device category (typically SRM)",
+					"type": "string"
+				},
 				"description": {
 					"title": "description",
 					"description": "can be used for further description of the device",
