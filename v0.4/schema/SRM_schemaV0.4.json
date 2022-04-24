@@ -441,28 +441,28 @@
 				}
 			}
 		},
-		"conditions": {
-			"title": "conditions",
+		"measurementConditions": {
+			"title": "measurementConditions",
 			"description": "Information about the measurement conditions",
 			"type": "object",
 			"properties": {
-				"measurementSetupName": {
-					"title": "measurementSetupName",
+				"name": {
+					"title": "name",
 					"description": "name measurement setup",
 					"type": "string"
 				},
-				"measurementSetupID": {
-					"title": "measurementSetupID",
+				"id": {
+					"title": "id",
 					"description": "ID of measurement setup",
 					"type": "string"
 				},				
-				"measurementSetupVersion": {
-					"title": "measurementSetupVersion",
+				"version": {
+					"title": "version",
 					"description": "version of measurement setup",
 					"type": "string"
 				},				
-				"measurementSetupInstitution": {
-					"title": "measurementSetupInstitution",
+				"institution": {
+					"title": "institution",
 					"description": "institution of measurement setup",
 					"type": "string"
 				},				
