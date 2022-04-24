@@ -176,8 +176,8 @@
 					"description": "This is the name of the device",
 					"type": "string"
 				},
-				"deviceType": {
-					"title": "deviceType",
+				"type": {
+					"title": "type",
 					"description": "This is the device type as defined by the manufactuer",
 					"type": "string"
 				},
