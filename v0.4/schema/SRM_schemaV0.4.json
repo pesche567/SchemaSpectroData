@@ -54,7 +54,7 @@
 			"title": "schemaName",
 			"description": "This is the name of the file format (i.e. spectroData)",
 			"type": "string",
-			"const": "spectroData"
+			"const": "schemaSpectroData"
 		},
 		"schemaVersion": {
 			"title": "schemaVersion",
