@@ -694,7 +694,7 @@
 								"n/a",
 							]
 						},
-						"powerMode": {
+						"nominalMode": {
 							"title": "nominalMode",
 							"description": "nominal mode of the power supply of the device under test",
 							"type": "string",
