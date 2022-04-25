@@ -118,8 +118,7 @@
 		"schemaURL": {
 			"title": "schemaURL",
 			"description": "URL that points to the description of the schema",
-			"type": "string",
-			"const": "0.4"
+			"type": "string"
 		},
 		"id": {
 			"title": "id",
