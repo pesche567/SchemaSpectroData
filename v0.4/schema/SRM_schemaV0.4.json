@@ -303,7 +303,12 @@
 						},
 						"referencePlaneSRM": {
 							"title": "referencePlaneSRM",
-							"description": "decription of the position of the reference plane",
+							"description": "decription of the position of the reference plane of the SRM",
+							"type": "string"
+						},
+						"azimuthZeroSRM": {
+							"title": "azimuthZeroSRM",
+							"description": "decription of the plane that defines azimuth=0° of the SRM",
 							"type": "string"
 						},
 						"SRMType": {
@@ -575,12 +580,12 @@
 			"properties": {
 				"id": {
 					"title": "id",
-					"description": "id of the device under test",
+					"description": "id of the source",
 					"type": "string"
 				},
 				"name": {
 					"title": "name",
-					"description": "name of the device under test (lampe, sample, etc)",
+					"description": "name of the source (lampe, sample, etc)",
 					"type": "string"
 				},
 				"type": {
@@ -590,18 +595,18 @@
 				},
 				"category": {
 					"title": "category",
-					"description": "category of the DUT",
+					"description": "category of the source",
 					"type": "string",
 					"const": "Source"
 				},
 				"description": {
 					"title": "description",
-					"description": "can be used for further description of the device under test",
+					"description": "can be used for further description of the source",
 					"type": "string"
 				},
 				"manufacturer": {
 					"title": "manufacturer",
-					"description": "manufacturer of the device under test",
+					"description": "manufacturer of the source",
 					"type": "string"
 				},
 				"serialNumber": {
@@ -616,12 +621,12 @@
 				},
 				"owner": {
 					"title": "owner",
-					"description": "owner of the device under test",
+					"description": "owner of the source",
 					"type": "string"
 				},
 				"comment": {
 					"title": "comment",
-					"description": "any comments on the device under test",
+					"description": "any comments on the source",
 					"type": "string"
 				},
 				"parameters":{
@@ -629,9 +634,14 @@
 					"description":"parameters of the DUT",
 					"type": "object",
 					"properties":{
-						"referencePlaneDUT": {
-							"title": "referencePlaneDUT",
-							"description": "decription of the position of the reference plane/point of the device under test",
+						"referencePlaneSource": {
+							"title": "referencePlaneSource",
+							"description": "decription of the position of the reference plane/point of the source",
+							"type": "string"
+						},
+						"azimuthZeroSource": {
+							"title": "AzimuthZeroSource",
+							"description": "decription of the plane that defines azimuth=0° of the source",
 							"type": "string"
 						},
 						"current": {
