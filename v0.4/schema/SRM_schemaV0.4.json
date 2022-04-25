@@ -264,9 +264,9 @@
 					"description": "owner of the SRM device",
 					"type": "string"
 				},
-				"comments": {
-					"title": "comments",
-					"description": "comments related to the device",
+				"comment": {
+					"title": "comment",
+					"description": "comment related to the device",
 					"type": "string"
 				},
 				"parameters":{
