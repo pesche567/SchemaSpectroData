@@ -526,6 +526,26 @@
 					"description": "measurement distance between reference plane of the device under test and the detector, expressed in m",
 					"type": "number"
 				},
+				"angleIncdientSRM": {
+					"title": "angleIncdientSRM",
+					"description": "incidence angle of the optical radiation on the SRM (normal incidence = 0°), expressed in degree",
+					"type": "number"
+				},				
+				"angleAzimthSRM": {
+					"title": "angleAzimthSRM",
+					"description": "azimuth angle of the optical radiation on the SRM, expressed in degree",
+					"type": "number"
+				},				
+				"angleIncdientSource": {
+					"title": "angleIncdientSource",
+					"description": "incidence angle of the optical radiation emitted by the source (normal incidence = 0°), expressed in degree",
+					"type": "number"
+				},				
+				"angleAzimthSource": {
+					"title": "angleAzimthSource",
+					"description": "azimuth angle of the optical radiation emitted by the source, expressed in degree",
+					"type": "number"
+				},
 				"operator": {
 					"title": "operator",
 					"description": "name of the operator",
