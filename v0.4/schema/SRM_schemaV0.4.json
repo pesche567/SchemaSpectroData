@@ -197,11 +197,22 @@
 			},
 			"uniqueItems": true
 		},
-		"rights": {
-			"title": "rights",
+		"accessRights": {
+			"title": "accessRights",
 			"description": "licence rights of the data",
 			"type": "object",
 			"properties": {
+				"rights":{
+					"title": "rights",
+					"description": "description of the access rights",
+					"type": "string",
+					"enum": [
+						"open",
+						"internal",
+						"private",
+						"rightsSchema"
+					]
+				},
 				"description": {
 					"title": "description",
 					"description": "description of the license rights",
