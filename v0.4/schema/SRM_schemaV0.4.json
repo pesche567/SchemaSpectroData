@@ -536,9 +536,9 @@
 					"description": "azimuth angle of the optical radiation on the SRM, expressed in degree",
 					"type": "number"
 				},				
-				"angleIncdientSource": {
-					"title": "angleIncdientSource",
-					"description": "incidence angle of the optical radiation emitted by the source (normal incidence = 0°), expressed in degree",
+				"angleEmittingSource": {
+					"title": "angleEmittingSource",
+					"description": "emission angle of the optical radiation emitted by the source (normal incidence = 0°), expressed in degree",
 					"type": "number"
 				},				
 				"angleAzimthSource": {
