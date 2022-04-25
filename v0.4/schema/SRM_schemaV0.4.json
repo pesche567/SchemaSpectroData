@@ -396,6 +396,16 @@
 							"description": "input optics used for the devices",
 							"type": "string"
 						},
+						"temperatureDevice1": {
+							"title": "temperatureDevice1",
+							"description": "temperature of the device at point 1, expressed in °C",
+							"type": "number"
+						},
+						"temperatureDevice2": {
+							"title": "temperatureDevice2",
+							"description": "temperature of the device at point 2, expressed in °C",
+							"type": "number"
+						},
 						"userPara": {
 							"$ref": "#/definitions/userPara"
 						}
@@ -519,11 +529,6 @@
 				"ambientRelHumidity": {
 					"title": "ambientRelHumidity",
 					"description": "relative ambient humidity during measurement, expressed in %",
-					"type": "number"
-				},
-				"temperatureDevice": {
-					"title": "temperatureDevice",
-					"description": "temperature of the device, expressed in °C",
 					"type": "number"
 				},
 				"measurementDistance": {
@@ -689,6 +694,16 @@
 								"power",
 								"n/a",
 							]
+						},
+						"temperatureDevice1": {
+							"title": "temperatureDevice1",
+							"description": "temperature of the device at point 1, expressed in °C",
+							"type": "number"
+						},
+						"temperatureDevice2": {
+							"title": "temperatureDevice2",
+							"description": "temperature of the device at point 2, expressed in °C",
+							"type": "number"
 						},
 						"userPara": {
 							"$ref": "#/definitions/userPara"
