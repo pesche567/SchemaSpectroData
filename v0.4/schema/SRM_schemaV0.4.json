@@ -118,7 +118,8 @@
 		"schemaURL": {
 			"title": "schemaURL",
 			"description": "URL that points to the description of the schema",
-			"type": "string"
+			"type": "string",
+			"const": "https://github.com/pesche567/SchemaSpectroData"
 		},
 		"id": {
 			"title": "id",
