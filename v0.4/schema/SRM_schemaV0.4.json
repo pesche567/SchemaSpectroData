@@ -214,8 +214,8 @@
 				},				
 			}
 		},
-		"SRMdevice": {
-			"title": "SRMdevice",
+		"deviceSRM": {
+			"title": "deviceSRM",
 			"description": "This is to describe the spectroradiometer device",
 			"type": "object",
 			"properties": {
@@ -237,7 +237,8 @@
 				"category": {
 					"title": "category",
 					"description": "This is the device category (SRM)",
-					"type": "string"
+					"type": "string",
+					"const": "SRM"
 				},
 				"description": {
 					"title": "description",
@@ -536,9 +537,9 @@
 				}
 			}
 		},
-		"DUT": {
-			"title": "DUT",
-			"description": "Information about the measurement conditions",
+		"deviceSource": {
+			"title": "deviceSource",
+			"description": "Information about the source (device under test) that is measured",
 			"type": "object",
 			"properties": {
 				"id": {
@@ -559,7 +560,8 @@
 				"category": {
 					"title": "category",
 					"description": "category of the DUT",
-					"type": "string"
+					"type": "string",
+					"const": "Source"
 				},
 				"description": {
 					"title": "description",
